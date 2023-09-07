@@ -92,61 +92,63 @@ export const Corporal =() =>{
         console.log(datos.masaresidual);
     }
     return(
-    <div className=' pl-14 w-full'>
+    <div className=' pl-14 w-full grid grid-cols-2 justify-center '>
         
-        <div className='pb-10'>
+        <div className='pb-10 w-[50%]'>
+
         
-        <h1 className="text-center text-white">Composicion Corporal</h1>
+        <h1 className="text-center text-white text-5xl">Composicion Corporal</h1>
         <form onSubmit={handleSubmit} className=''> 
         
-        <h3 className='text-white'>Genero</h3>
-        <select className="text-white " name='gender' value={input.gender} onChange={handleInputChange}  >
+        <h3 className='text-white text-2xl'>Genero</h3>
+        <select className="" name='gender' value={input.gender} onChange={handleInputChange}  >
             <option className='px-10' value="Hombre">Hombre</option>
             <option className='px-44' value="Mujer">Mujer</option>
         </select>
 
-        <h3 className='text-white'>Edad</h3>
+        <h3 className='text-white text-2xl'>Edad</h3>
         <input type='number' className='rounded-md' name='age' value={input.age} onChange={handleInputChange}/> 
-        <h3 className='text-white'>Peso</h3>
+        <h3 className='text-white text-2xl'>Peso</h3>
         <input type='number' className='rounded-md'  name='weight' value={input.weight} onChange={handleInputChange} /> 
 
-        <h3 className='text-white'>Altura</h3>
+        <h3 className='text-white text-2xl'>Altura</h3>
         <input type='number' className='rounded-md'  name='height' value={input.height} onChange={handleInputChange} /> 
 
 
-        <h3 className='text-white'>Bicipital</h3>
+        <h3 className='text-white text-2xl'>Bicipital</h3>
         <input type='text' className='rounded-md'  name='bicep' value={input.bicep} onChange={handleInputChange}/> 
 
-        <h3 className='text-white'>Tricipital</h3>
+        <h3 className='text-white text-2xl'>Tricipital</h3>
         <input type='text' className='rounded-md'  name='tricep' value={input.tricep} onChange={handleInputChange} /> 
 
-        <h3 className='text-white'>Subescapular</h3>
+        <h3 className='text-white text-2xl'>Subescapular</h3>
         <input type='text' className='rounded-md'  name='subscapular' value={input.subscapular} onChange={handleInputChange} /> 
 
-        <h3 className='text-white'>Supraileaco</h3>
+        <h3 className='text-white text-2xl'>Supraileaco</h3>
         <input type='text' className='rounded-md'  name='suprailiac' value={input.suprailiac} onChange={handleInputChange} /> 
-        <h3 className='text-white'>Femur</h3>
+        <h3 className='text-white text-2xl'>Femur</h3>
         <input type='number' className='rounded-md'  name='femur' value={input.femur} onChange={handleInputChange} /> 
-        <h3 className='text-white'>Biestiloideo</h3>
+        <h3 className='text-white text-2xl'>Biestiloideo</h3>
         <input className='rounded-md'  type='number' name='bystoloid' value={input.bystoloid} onChange={handleInputChange}/> 
         <br/>
         <div className='h-10'/>
         <input className='border-transparent bg-[#3282B8] text-white rounded-lg w-[30%] h-9' type='submit' value={"Enviar"}/>
 
         </form>
-        </div>
         <div>
-            <div>{densidad && <p className='text-white'> La densidad es igual a: {densidad} </p>}</div>
-            <div>{porcentaje.bodyfat && <p className='text-white'> La grasa corporal es igual a: {datos.masaGrasa} </p>}</div>
+            {/* <div>{densidad && <p className='text-white'> La densidad es igual a: {densidad} </p>}</div>
+            <div>{porcentaje.bodyfat && <p className='text-white'> La grasa corporal es igual a: {datos.masaGrasa} </p>}</div> */}
             {/* <div>{masa && <p className='text-white'> La Masa osea es igual a: {datos.masaOsea} </p>}</div> */}
             {/* <div>{masaResidualkg && <p className='text-white'> La grasa residual es igual a: {datos.residual} </p>}</div> */}
         </div>
         <div className='text-white pt-[3%]'>
             <Table datos={datos} porcentaje={porcentaje}/>
+            </div>
             {/* <Tabla datos={datos} porcentaje={porcentaje} /> */}
-            
-            {datos && <Grafica porcentaje={porcentaje} /> }
         </div>
+            
+            <div className=''>
+                {datos && <Grafica porcentaje={porcentaje} /> }</div>
 
        
     </div>)

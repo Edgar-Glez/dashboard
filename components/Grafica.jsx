@@ -36,9 +36,9 @@ export const Grafica = ({ porcentaje }) => {
     }, [porcentaje.bodyfat, porcentaje.boneMass, porcentaje.residualmass, porcentaje.muscleMass]);
 
     return (
-        <div style={{ width: '100%', height: 'auto' }}>
+        <div style={{ width: '70%', height: 'auto' }}>
             <center>
-                <h1>Gráfica</h1>
+                <h1 className='text-white text-5xl'>Gráfica</h1>
             </center>
             <canvas ref={chartRef} id="pieChart"></canvas>
         </div>
