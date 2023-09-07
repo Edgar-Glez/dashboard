@@ -13,9 +13,9 @@ export const Grafica = ({ porcentaje }) => {
             myChart = new Chart(chartRef.current, {
                 type: 'pie',
                 data: {
-                    labels: ['Masa Ósea', 'Masa Grasa', 'Masa Muscular', 'Masa Residual'],
+                    labels: ['Masa Grasa', 'Masa Osea',  'Masa Residual', 'Masa Muscular',],
                     datasets: [{
-                        data: [porcentaje.boneMass, porcentaje.bodyfat, porcentaje.muscleMass, porcentaje.residualmass],
+                        data: [ porcentaje.bodyfat, porcentaje.boneMass, porcentaje.residualmass, porcentaje.muscleMass],
                         backgroundColor: ['blue', 'red', 'black', 'green'],
                     }],
                 },
@@ -33,10 +33,10 @@ export const Grafica = ({ porcentaje }) => {
                 myChart.destroy();
             }
         };
-    }, [porcentaje.boneMass, porcentaje.bodyfat, porcentaje.muscleMass, porcentaje.residualmass]);
+    }, [porcentaje.bodyfat, porcentaje.boneMass, porcentaje.residualmass, porcentaje.muscleMass]);
 
     return (
-        <div style={{ width: '100%', height: 'auto', backgroundColor: 'primary' }}>
+        <div style={{ width: '100%', height: 'auto' }}>
             <center>
                 <h1>Gráfica</h1>
             </center>
