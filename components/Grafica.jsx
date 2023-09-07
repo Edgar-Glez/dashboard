@@ -5,22 +5,18 @@ export const Grafica = ({ porcentaje }) => {
     const chartRef = useRef(null);
     let myChart = null;
 
-    // Este efecto se ejecuta cuando cambian los percentajes
     useEffect(() => {
         if (chartRef.current) {
-            // Destruir la gráfica existente si ya existe
             if (myChart) {
                 myChart.destroy();
             }
-
-            // Crear una nueva gráfica con los percentajes actualizados
             myChart = new Chart(chartRef.current, {
                 type: 'pie',
                 data: {
                     labels: ['Masa Ósea', 'Masa Grasa', 'Masa Muscular', 'Masa Residual'],
                     datasets: [{
                         data: [porcentaje.boneMass, porcentaje.bodyfat, porcentaje.muscleMass, porcentaje.residualmass],
-                        backgroundColor: ['red', 'blue', 'yellow', 'green'],
+                        backgroundColor: ['blue', 'red', 'black', 'green'],
                     }],
                 },
                 options: {
@@ -32,8 +28,6 @@ export const Grafica = ({ porcentaje }) => {
                 },
             });
         }
-
-        // Asegurarse de que la gráfica se destruya cuando el componente se desmonte
         return () => {
             if (myChart) {
                 myChart.destroy();
@@ -43,7 +37,9 @@ export const Grafica = ({ porcentaje }) => {
 
     return (
         <div style={{ width: '100%', height: 'auto', backgroundColor: 'primary' }}>
-            <h1>Gráfica de Pastel</h1>
+            <center>
+                <h1>Gráfica</h1>
+            </center>
             <canvas ref={chartRef} id="pieChart"></canvas>
         </div>
     );
