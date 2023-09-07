@@ -1,22 +1,6 @@
 import { useEffect } from "react"
 
 export const Table = ({datos,porcentaje}) => {
-    const {boneMass, bodyfat, muscleMass, residualmass} = datos
-    const {bodyFatPercent, residualMassPercent, muscleMassPercent, boneMassPercent} = porcentaje
-    
-
-    // useEffect(() => {
-    //     setChartData({
-    //         labels: ['Masa Ósea', 'Masa Grasa', 'Masa Muscular', 'Masa Residual'],
-    //         datas: [
-    //             porcentaje.boneMass,
-    //             porcentaje.bodyfat,
-    //             porcentaje.muscleMass,
-    //             porcentaje.residualmass
-    //         ],
-    //     });
-    // }, [porcentaje])
-
     return (
         <div>
             <h1 className="text-2xl">Composicion Corporal</h1>
